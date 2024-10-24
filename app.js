@@ -163,38 +163,109 @@ const phones = [
 
 const div = document.querySelector("#cards-container")
 
-phones.map((item , index)=> {
+const cartItems = []
+
+phones.map((item , index)=>{
     div.innerHTML += `
     <div class="card">
-                <div class="card bg-primary text-primary-content w-96" >
+                <div class="card bg-primary text-primary-content w-96">
                     <div class="card-body">
                         <h2 class="card-title">Brand : ${item.brand} ${item.model}</h2>
                         <h2 class="card-title">Ram : ${item.ram}</h2>
                         <h2 class="card-title">Rom : ${item.rom}</h2>
                         <h2 class="card-title">Price : $${item.price}</h2>
                         <div class="card-actions justify-end">
-                        <button class="btn" onclick = "addToCart(${index})">Add To Cart!</button>
+                            <button class="btn" onclick="addToCart(${index})">Add To Cart!</button>
                         </div>
                     </div>
-                </div>
-            </div>
-    `
+                </div>`
 })
 
-const cartItems = [];
 
 
 function addToCart(index) {
-    const checkItems = cartItems.indexOf(phones[index])
-    if (checkItems === -1) {
-    phones[index].quantity = 1
-    cartItems.push(phones[index])
+    const cart = cartItems.indexOf(phones[index])
+    if (cart === -1) {
+        phones[index].quantity = 1
+        cartItems.push(phones[index])
     } else {
-        cartItems[checkItems].quantity += 1
+        cartItems[cart].quantity += 1
     }
     console.log(cartItems);
-    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// phones.map((item , index)=> {
+//     div.innerHTML += `
+//     
+//     `
+// })
+
+// const cartItems = [];
+
+
+// function addToCart(index) {
+//     const checkItems = cartItems.indexOf(phones[index])
+//     if (checkItems === -1) {
+//     phones[index].quantity = 1
+//     cartItems.push(phones[index])
+//     } else {
+//         cartItems[checkItems].quantity += 1
+//     }
+//     console.log(cartItems);
+// }
 
 
 
