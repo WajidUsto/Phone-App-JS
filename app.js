@@ -171,7 +171,7 @@ phones.map((item , index)=> {
                         <h2 class="card-title">Brand : ${item.brand} ${item.model}</h2>
                         <h2 class="card-title">Ram : ${item.ram}</h2>
                         <h2 class="card-title">Rom : ${item.rom}</h2>
-                        <h2 class="card-title">Price : ${item.price}</h2>
+                        <h2 class="card-title">Price : $${item.price}</h2>
                         <div class="card-actions justify-end">
                         <button class="btn" onclick = "addToCart(${index})">Add To Cart!</button>
                         </div>
@@ -183,13 +183,62 @@ phones.map((item , index)=> {
 
 const cartItems = [];
 
+
 function addToCart(index) {
-    const checkindex = cartItems.indexOf(phones[index])
-    if (checkindex === -1) {
-        phones[index].quantity = 1
-        cartItems.push(phones[index])
+    const checkItems = cartItems.indexOf(phones[index])
+    if (checkItems === -1) {
+    phones[index].quantity = 1
+    cartItems.push(phones[index])
     } else {
-        cartItems[checkindex].quantity += 1;
+        cartItems[checkItems].quantity += 1
     }
     console.log(cartItems);
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function addToCart(index) {
+//     const checkindex = cartItems.indexOf(phones[index])
+//     if (checkindex === -1) {
+//         phones[index].quantity = 1
+//         cartItems.push(phones[index])
+//     } else {
+//         cartItems[checkindex].quantity += 1;
+//     }
+//     console.log(cartItems);
+// }
+
