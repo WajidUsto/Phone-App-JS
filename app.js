@@ -197,6 +197,12 @@ function addToCart(index) {
 
 
 
+function cart() {
+    const localstring = JSON.stringify(cart);
+    localStorage.getItem("cart",localstring)
+    window.location = "cart.html"
+}
+
 
 
 
